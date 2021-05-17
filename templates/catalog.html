@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- ========== PAGES DEPARTMENT START ========== -->
+
+    <section class="pagedepart">
+        <div class="container">
+            <div class="pagedepart_content">
+                <a class="prev_link" href="index.html">Главная</a>
+                <span>&#062;</span>
+                <a class="current_link" href="catalog.html">Продукция</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGES DEPARTMENT END ========== -->
+
+    <!-- ========== ABOUT US START ========== -->
+
+    <section class="about" style="background-image: url(/static/img/catalog.jpg);">
+        <div class="container">
+            <div class="about_content">
+                <h2 class="about_title">Экспорт продукции</h2>
+                <p class="about_text">Продукция компании прошла испытания во многих аккредитованных лабораториях , на основании которых получено разрешение на ввоз в другие страны . В случае заинтересованности в дополнительной информации по экспорту продукции свяжитесь нами.</p>
+                <div class="about_link">
+                    <a href="{% url 'contacts' %}">Связаться с нами</a>
+                </div>
+            </div>
+            <div class="about_blackbg"></div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT US END ========== -->
+    <!-- ========== CATALOG START ========== -->
+    <section class="catalog">
+        <div class="blog_container">
+            <div class="catalog_body">
+                <div class="catalog_title">
+                    <h1>Наша продукция</h1>
+                </div>
+                <div class="catalog_wrap">
+                    {% for product in object_list %}
+                    <div class="catalog_item">
+                        <div class="catalog_item_title">
+                            <h1>{{ product.title }}</h1>
+                            <p>{{ product.description }}</p>
+                        </div>
+                        <div class="catalog_item_img">
+                            <img src="{{ product.image.url }}" alt="">
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- ========== CATALOG END ========== -->
+{% endblock %}

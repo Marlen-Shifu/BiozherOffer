@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <!-- ========== PAGES DEPARTMENT START ========== -->
+
+    <section class="pagedepart">
+        <div class="container">
+            <div class="pagedepart_content">
+                <a class="prev_link" href="index.html">Главная</a>
+                <span>&#062;</span>
+                <a class="prev_link" href="about.html">О Компании</a>
+                <span>&#062;</span>
+                <a class="current_link" href="{% url 'gallery' %}">Фото Испытаний</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGES DEPARTMENT END ========== -->
+
+    <!-- ========== PHOTO TEST START ========== -->
+
+    <section class="photo">
+        <div class="container">
+            <div class="photo_title">
+                <h2>Фото Испытаний</h2>
+            </div>
+            <div class="photo_content">
+                {% for photo_item in object_list %}
+                <div class="photo_item">
+                    <div class="photo_img">
+                        <img src="{{ photo_item.image.url }}" alt="">
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PHOTO TEST END ========== -->
+
+{% endblock %}

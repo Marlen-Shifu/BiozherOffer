@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- ========== PAGES DEPARTMENT START ========== -->
+
+    <section class="pagedepart">
+        <div class="container">
+            <div class="pagedepart_content">
+                <a class="prev_link" href="index.html">Главная</a>
+                <span>&#062;</span>
+                <a class="prev_link" href="about.html">О Компании</a>
+                <span>&#062;</span>
+                <a class="current_link" href="{% url 'documentation' %}">Документация</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGES DEPARTMENT END ========== -->
+
+    <!-- ========== DOCUMENTATIONS START ========== -->
+
+    <section class="document">
+        <div class="container">
+            <div class="document_title">
+                <h2>Документация</h2>
+            </div>
+            <div class="document_content">
+                {% for document_block in object_list %}
+                <div class="document_item" data-name="accordeon-title">
+                    <h3 class="document_title">{{ document_block.title }}</h3>
+                </div>
+                <div class="document_item document_item-content hidden">
+                    {% for document_item in document_block.documentationblockitem_set.all %}
+                    <div class="document_info">
+                        <div class="document_info-icon">
+                            <img src="{% static 'img/pdficon.png' %}" alt="">
+                        </div>
+                        <div class="document_info-name">
+                            <a target="_blank" download href="{{ document_item.file.url }}" data-filename="Сертификат из Алматы">
+                                Посмотреть
+                            </a>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== DOCUMENTATIONS END ========== -->
+
+{% endblock %}

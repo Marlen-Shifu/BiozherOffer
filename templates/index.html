@@ -1,0 +1,127 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+    <!-- ========== HEADER START ========== -->
+    <header class="header">
+        <div class="header_slider">
+            <div class="header_slider-item slider-item" style="background-image: url(/static/img/headerbg.jpg);">
+                <div class="slider-item__content">
+                    <div class="slider_info">
+                        <div class="slider-item__info-suptitle">
+                            Натуральные чистая экология и биологический грунт нового поколения продуктов
+                        </div>
+                        <div class="slider-item__info-suptext">
+                            “Biozher” позволяет увеличить урожай на 25-30% при сокращении периода созревания на 5-15 дней!
+                        </div>
+                        <div class="slider-item__info-link">
+                            <a href="{% url 'about' %}">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header_slider-item slider-item" style="background-image: url(/static/img/nitratbg.jpg);">
+                <div class="slider-item__content">
+                    <div class="slider_info">
+                        <div class="slider-item__info-suptitle">
+                            Биологический грунт <br> нового поколения
+                        </div>
+                        <div class="slider-item__info-suptext">
+                            Обладает увеличенным содержанием полезной микрофлоры без запахов
+                        </div>
+                        <div class="slider-item__info-link">
+                            <a href="{% url 'about' %}">Подробнее</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ========== HEADER END ========== -->
+
+    <!-- ========== CHOOSE START ========== -->
+
+    <section class="choose">
+        <div class="container">
+            <div class="choose_title">
+                <h2>Почему все выбирают “Biozher”?</h2>
+            </div>
+            <div class="choose_content">
+                <div class="choose_top-items">
+                    <div class="choose_item">
+                        <div class="choose_item-img">
+                            <img src="{% static 'img/hand.png' %}" alt="">
+                        </div>
+                        <h3 class="choose_item-title">Органические соединения</h3>
+                        <p class="choose_item-text">Содержит основные элементы питания растений (азот, фосфор, калий) и микроэлементы (медь, цинк, бор, магний и др.)</p>
+                    </div>
+                    <div class="choose_item">
+                        <div class="choose_item-img">
+                            <img src="{% static 'img/ground.png' %}" alt="">
+                        </div>
+                        <h3 class="choose_item-title">Полезная микрофлора</h3>
+                        <p class="choose_item-text">В ходе биоферментации многократно увеличивается содержание полезной (аэробной) микрофлоры – основы жизни плодородного слоя земли.</p>
+                    </div>
+                    <div class="choose_item">
+                        <div class="choose_item-img">
+                            <img src="{% static 'img/plants.png' %}" alt="">
+                        </div>
+                        <h3 class="choose_item-title">отсутствие семян сорных растений</h3>
+                        <p class="choose_item-text">Технология глубокой аэробной биоферментации позволяет обеспечить 100% отсутствие семян сорных растений в действующем веществе (органическом удобрении КМН).</p>
+                    </div>
+                    <div class="choose_item">
+                        <div class="choose_item-img">
+                            <img src="{% static 'img/smell.png' %}" alt="">
+                        </div>
+                        <h3 class="choose_item-title">отсутствие запахов</h3>
+                        <p class="choose_item-text">Характерные для органической продукции неприятные запахи пропадают в результате активной деятельности микрофлоры.</p>
+                    </div>
+                    <div class="choose_item">
+                        <div class="choose_item-img">
+                            <img src="{% static 'img/clear plants.png' %}" alt="">
+                        </div>
+                        <h3 class="choose_item-title">чистота балтики</h3>
+                        <p class="choose_item-text">Технология “Биозём” дает 100% гарантию обеззараживания патогенной микрофлоры, что позволяет легально применять продукцию на сельскохозяйственных угодьях, тем самым сокращая вероятность попадания биогенов в воды Балтийского Моря.</p>
+                    </div>
+                    <div class="choose_item">
+                        <div class="choose_item-img">
+                            <img src="{% static 'img/credibility.png' %}" alt="">
+                        </div>
+                        <h3 class="choose_item-title">множественный отбор</h3>
+                        <p class="choose_item-text">Наши продукты заверены лучшими профессорами со всего Казахстана.И мы с точностью в 100% заверяем что наши продукты прошли множественный отбор и не причинят вреда вашим землям.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== CHOOSE END ========== -->
+
+    <!-- ========== NITRAT START ========== -->
+
+    <section class="nitrat">
+        <div class="container">
+            <div class="nitrat_content">
+                <div class="nitrat_info">
+                    <div class="nitrat_info_firstitem">
+                        <h2 class="nitrat_title">Урожай без нитратов!</h2>
+                        <p class="nitrat_text">Все овощи, ягоды и фрукты, выращенные на КМН, проверены на содержание нитратов. Фактическое их содержание значительно ниже предельно допустимых норм.</p>
+                        <a href="{% url 'documentation' %}" class="nitrat_link">Документация</a>
+                    </div>
+                    <div class="nitrat_info_seconditem">
+                        <h2 class="nitrat_title">“BIOZHER” работает!</h2>
+                        <p class="nitrat_text">Практические испытания КМН проведены на разных культурах в большом количестве сельхозпредприятий и питомников Жамбылской области. Результаты испытаний во всех случаях положительные, а в некоторых – превзошли все ожидания. Кроме
+                            этого, мы провели собственные испытания на садовом участке во Байзакском районе.</p>
+                        <a href="{% url 'gallery' %}" class="nitrat_link">Фотографии испытаний</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== NITRAT END ========== -->
+
+{% endblock %}

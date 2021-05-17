@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+    <!-- ========== PAGES DEPARTMENT START ========== -->
+
+    <section class="pagedepart">
+        <div class="container">
+            <div class="pagedepart_content">
+                <a class="prev_link" href="{% url 'home' %}">Главная</a>
+                <span>&#062;</span>
+                <a class="current_link" href="{% url 'about' %}">О Компании</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGES DEPARTMENT END ========== -->
+
+    <!-- ========== ABOUT US START ========== -->
+
+    <section class="about" style="background-image: url(/static/img/aboutusbg.jpg);">
+        <div class="container">
+            <div class="about_content">
+                <h2 class="about_title">О Компании</h2>
+                <p class="about_text">Производством органического удобрения “КМН” и биологически активного грунта “BIOZHER” занимается специально созданное для этого ООО “BIOZHER”. Продукция производится по лицензии ГНУ ВНИИМЗ – разработчика технологии, обеспечивающей гарантированное
+                    обеззараживание птичьего помета (навоза) без использования ядохимикатов и превосходит по совокупности качеств исходное сырье в 2-4 раза.</p>
+                <div class="about_link">
+                    <a href="{% url 'documentation' %}">Подробнее</a>
+                </div>
+            </div>
+            <div class="about_blackbg"></div>
+        </div>
+    </section>
+
+    <!-- ========== ABOUT US END ========== -->
+
+    <!-- ========== BIOZHER START ========== -->
+
+    <section class="biozher">
+        <div class="container">
+            <div class="biozher_content">
+                <div class="biozher_left">
+                    <h2 class="biozher_title">Лучшие в природе</h2>
+                    <p class="biozher_text">Биоудобрение произведенное на основе куриного помета с применением ЭМ (эффективные микроорганизмы) бактерий чрезвычайно полезно для плодородия почвы и воздействует на нее комплексно. Такое удобрение не только структурирует землю, но
+                        и улучшает ее биохимический состав, увеличивает количество полезных микроорганизмов и червей, что неминуемо положительно отражается на плодородии каждой садовой, бахчевой и огородной культуры.</p>
+                    <a href="{% url 'contacts' %}" class="biozher_link">Свяжитесь с нами и узнайте больше!</a>
+                </div>
+                <img class="biozher_right" src="{% static 'img/biozherbg.png' %}" alt="">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BIOZHER END ========== -->
+
+{% endblock %}

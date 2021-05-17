@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+    <!-- ========== PAGES DEPARTMENT START ========== -->
+
+    <section class="pagedepart">
+        <div class="container">
+            <div class="pagedepart_content">
+                <a class="prev_link" href="index.html">Главная</a>
+                <span>&#062;</span>
+                <a class="current_link" href="blog.html">Блог</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PAGES DEPARTMENT END ========== -->
+
+    <!-- ========== BLOG START ========== -->
+    <section class="blog">
+        <div class="blog_container">
+            <div class="blog_wrap">
+                {% for post in object_list %}
+                <div class="blog_post">
+                    <div class="post_video">
+                        <iframe width="560" height="315" src="{{ post.link_for_video }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div class="post_words">
+                            <h1>{{ post.title }}</h1>
+                            <p>{{ post.description }}</p>
+                        </div>
+                    </div>
+                    <div class="post_btns">
+                        <a class="btn_info" href="{% url 'blog_detail' post.pk %}">узнать больше</a>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== BLOG END ========== -->
+{% endblock %}
